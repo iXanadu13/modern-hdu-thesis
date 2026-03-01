@@ -10,27 +10,27 @@
   depth: 4,
   title: "目　　录",
   outlined: false,
-  title-vspace: 0pt,
+  title-vspace: 9pt,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
   reference-font: auto,
   reference-size: 字号.小四,
   // 字体与字号
   font: auto,
-  size: (字号.四号, 字号.小四),
+  size: (字号.小四, 字号.小四),
   // 垂直间距
-  above: (25pt, 14pt),
+  above: (14pt, 14pt),
   below: (14pt, 14pt),
-  indent: (0pt, 18pt, 28pt),
+  indent: (0pt, 1em, 2em),
   // 全都显示点号
-  fill: (repeat([.], gap: 0.15em),),
-  gap: .3em,
+  fill: (repeat([.], gap: 0.1em),),
+  gap: .2em,
   ..args,
 ) = {
   // 1.  默认参数
   fonts = 字体 + fonts
   if title-text-args == auto {
-    title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
+    title-text-args = (font: fonts.黑体, size: 字号.三号)
   }
   // 引用页数的字体，这里用于显示 Times New Roman
   if reference-font == auto {
@@ -38,7 +38,7 @@
   }
   // 字体与字号
   if font == auto {
-    font = (fonts.黑体, fonts.宋体)
+    font = (fonts.宋体, fonts.宋体)
   }
 
   // 2.  正式渲染
@@ -49,6 +49,7 @@
 
   {
     set align(center)
+    v(1em)
     text(..title-text-args, title)
     // 标记一个不可见的标题用于目录生成
     invisible-heading(level: 1, outlined: outlined, title)

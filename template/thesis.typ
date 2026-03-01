@@ -1,4 +1,5 @@
-#import "@preview/modern-nju-thesis:0.4.0": documentclass
+#import "../lib.typ": documentclass
+#import "../utils/style.typ": 字号, 字体
 
 // 你首先应该安装 https://github.com/nju-lug/modern-nju-thesis/tree/main/fonts/FangZheng 里的所有字体，
 // 如果是 Web App 上编辑，你应该手动上传这些字体文件，否则不能正常使用「楷体」和「仿宋」，导致显示错误。
@@ -13,12 +14,13 @@
   // doctype: "bachelor",  // "bachelor" | "master" | "doctor" | "postdoc", 文档类型，默认为本科生 bachelor
   // degree: "academic",  // "academic" | "professional", 学位类型，默认为学术型 academic
   // anonymous: true,  // 盲审模式
-  twoside: true,  // 双面模式，会加入空白页，便于打印
+  twoside: false,  // 双面模式，会加入空白页，便于打印
   // 你会发现 Typst 有许多警告，这是因为 modern-nju-thesis 加入了很多不必要的 fallback 字体
   // 你可以自定义字体消除警告，先英文字体后中文字体，应传入「宋体」、「黑体」、「楷体」、「仿宋」、「等宽」
   // fonts: (楷体: (name: "Times New Roman", covers: "latin-in-cjk"), "FZKai-Z03S")),
   info: (
-    title: ("基于 Typst 的", "南京大学学位论文"),
+    // title: "基于 Typst 的杭州电子科技大学学位论文",
+    title: ("基于 Typst 的", "杭州电子科技大学学位论文"),
     title-en: "My Title in English",
     grade: "20XX",
     student-id: "1234567890",
@@ -50,6 +52,19 @@
 // 声明页
 #decl-page()
 
+// 此后的每一页都有header
+#set page(
+  header: context{
+    [
+      #align(center, text(
+        size: 字号.五号, 
+        font: ("SimSun", "SimSun"), 
+        "杭州电子科技大学本科毕业设计（论文）")
+      )
+      #block(line(length: 100%, stroke: 0.5pt), above: 0.4em)
+    ]
+  },
+)
 
 // 前言
 #show: preface
@@ -142,7 +157,7 @@
 ]))
 
 #figure(
-  image("images/nju-emblem.svg", width: 20%),
+  image("images/hdu-emblem.svg", width: 25%),
   caption: [图片测试],
 ) <nju-logo>
 
@@ -196,14 +211,15 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
   pagebreak() + " "
 }
 
-// 中英双语参考文献
-// 默认使用 gb-7714-2015-numeric 样式
-#bilingual-bibliography(full: true)
-
 // 致谢
 #acknowledgement[
   感谢 NJU-LUG，感谢 NJUThesis LaTeX 模板。
 ]
+
+// 中英双语参考文献
+// 默认使用 gb-7714-2015-numeric 样式
+#bilingual-bibliography(full: true)
+
 
 // 手动分页
 #if twoside {
@@ -223,6 +239,6 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 附录内容，这里也可以加入图片，例如@fig:appendix-img。
 
 #figure(
-  image("images/nju-emblem.svg", width: 20%),
+  image("images/hdu-emblem.svg", width: 25%),
   caption: [图片测试],
 ) <appendix-img>

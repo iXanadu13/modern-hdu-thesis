@@ -46,31 +46,33 @@
   pagebreak(weak: true, to: if twoside { "odd" })
 
   [
-    #set text(font: fonts.楷体, size: 字号.小四)
+    #set text(font: fonts.宋体, size: 字号.小四)
     #set par(leading: leading, justify: true, spacing: spacing)
 
     // 标记一个不可见的标题用于目录生成
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(size: 字号.小二, weight: "bold")
+      #set text(size: 16pt, font: fonts.黑体)
 
       #v(1em)
 
-      #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）中文摘要]]
+      // #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）中文摘要]]
+      摘　　要
     ]
 
-    #fakebold[题目：]#info-value("title", (("",)+ info.title).sum())
+    // #fakebold[题目：]#info-value("title", (("",)+ info.title).sum())
 
-    #fakebold[院系：]#info-value("department", info.department)
+    // #fakebold[院系：]#info-value("department", info.department)
 
-    #fakebold[专业：]#info-value("major", info.major)
+    // #fakebold[专业：]#info-value("major", info.major)
 
-    #fakebold[本科生姓名：]#info-value("author", info.author)
+    // #fakebold[本科生姓名：]#info-value("author", info.author)
 
-    #fakebold[指导教师（姓名、职称）：]#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + info.supervisor-ii.at(1))])
+    // #fakebold[指导教师（姓名、职称）：]#info-value("supervisor", info.supervisor.at(0) + info.supervisor.at(1)) #(if info.supervisor-ii != () [#h(1em) #info-value("supervisor-ii", info.supervisor-ii.at(0) + info.supervisor-ii.at(1))])
 
-    #fakebold[摘要：]
+    // #fakebold[摘要：]
+    #v(1em)
 
     #[
       #set par(first-line-indent: (amount: 2em, all: true))
@@ -80,6 +82,6 @@
 
     #v(1em)
 
-    #fakebold[关键词：]#(("",)+ keywords.intersperse("；")).sum()
+    #text(size: 字号.小四, font: fonts.黑体, "关键词：")#(("",)+ keywords.intersperse("；")).sum()
   ]
 }

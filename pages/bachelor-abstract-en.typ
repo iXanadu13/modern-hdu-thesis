@@ -43,39 +43,45 @@
   }
 
   // 4.  正式渲染
-  [
-    #pagebreak(weak: true, to: if twoside { "odd" })
+  pagebreak(weak: true, to: if twoside { "odd" })
 
-    #set text(font: fonts.楷体, size: 字号.小四)
+  [
+    #set text(font: fonts.宋体, size: 字号.小四)
     #set par(leading: leading, justify: true, spacing: spacing)
 
     // 标记一个不可见的标题用于目录生成
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(size: 字号.小二, weight: "bold")
+      #set text(size: 16pt, weight: "bold")
 
       #v(1em)
 
-      #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）英文摘要]]
+      // #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）英文摘要]]
+      #outline-title
     ]
-
-    #v(2pt)
-
-    THESIS: #info-value("title-en", (("",)+ info.title-en).sum())
-
-    DEPARTMENT: #info-value("department-en", info.department-en)
-
-    SPECIALIZATION: #info-value("major-en", info.major-en)
-
-    UNDERGRADUATE: #info-value("author-en", info.author-en)
-
-    MENTOR: #info-value("supervisor-en", info.supervisor-en) #(if info.supervisor-ii-en != "" [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en)])
-
-    ABSTRACT: #body
 
     #v(1em)
 
-    KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
+    // THESIS: #info-value("title-en", (("",)+ info.title-en).sum())
+
+    // DEPARTMENT: #info-value("department-en", info.department-en)
+
+    // SPECIALIZATION: #info-value("major-en", info.major-en)
+
+    // UNDERGRADUATE: #info-value("author-en", info.author-en)
+
+    // MENTOR: #info-value("supervisor-en", info.supervisor-en) #(if info.supervisor-ii-en != "" [#h(1em) #info-value("supervisor-ii-en", info.supervisor-ii-en)])
+
+    #[
+      #set par(first-line-indent: (amount: 2em, all: true))
+      
+      #body
+    ]
+
+    #v(1em)
+
+    // KEYWORDS: #(("",)+ keywords.intersperse("; ")).sum()
+    #text(size: 字号.小四, font: fonts.宋体, "Key words：", weight: "bold")#(("",)+ keywords.intersperse("；")).sum()
   ]
 }

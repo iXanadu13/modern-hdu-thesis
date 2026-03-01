@@ -1,4 +1,5 @@
 #import "../utils/style.typ": 字号, 字体
+#import "../utils/custom-cuti.typ": fakebold, cn-fakebold
 
 // 本科生声明页
 #let bachelor-decl-page(
@@ -28,44 +29,58 @@
   // 3.  正式渲染
   pagebreak(weak: true, to: if twoside { "odd" })
 
-  v(6pt)
+  v(110pt)
 
-  align(center, image("../assets/vi/nju-emblem-purple.svg", width: 1.95cm))
+  // align(center, image("../assets/vi/nju-emblem-purple.svg", width: 1.95cm))
 
-  v(-12pt)
+  // v(-12pt)
 
   align(
     center,
-    text(
-      font: fonts.黑体,
-      size: 字号.小一,
-      weight: "bold",
-      "南京大学本科毕业论文（设计）\n诚信承诺书",
-    ),
+    cn-fakebold(
+      text(
+        font: fonts.黑体,
+        size: 18pt,
+        weight: "bold",
+        "诚 信 承 诺",
+      ),
+    )
   )
 
   v(48pt)
 
   block[
-    #set text(font: fonts.宋体, size: 字号.小三)
-    #set par(justify: true, first-line-indent: (amount: 2em, all: true), leading: 2.42em)
+    #set text(font: fonts.宋体, size: 14pt)
+    #set par(justify: true, first-line-indent: (amount: 2em, all: true), leading: 1.8em)
 
-    本人郑重承诺：所呈交的毕业论文（设计）（题目：#info.title.sum()）是在指导教师的指导下严格按照学校和院系有关规定由本人独立完成的。本毕业论文（设计）中引用他人观点及参考资源的内容均已标注引用，如出现侵犯他人知识产权的行为，由本人承担相应法律责任。本人承诺不存在抄袭、伪造、篡改、代写、买卖毕业论文（设计）等违纪行为。
+    我谨在此承诺：本人所写的毕业论文《#info.title.sum()》均系本人独立完成，没有抄袭行为，凡涉及其他作者的观点和材料，均作了注释，若有不实，后果由本人承担。
   ]
 
   v(76pt)
 
   grid(
-    columns: (1fr, 150pt),
+    columns: (1fr, 212pt),
     [],
     align(left)[
-      #set text(font: fonts.黑体, size: 字号.小三)
-      
-      作者签名：
+      #fakebold(text(
+        font: fonts.黑体,
+        size: 15pt,
+        "承诺人（签名）：",
+      ))
+    ]
+  )
 
-      学号：
+  v(10pt)
 
-      日期：
+  grid(
+    columns: (1fr, 190pt),
+    [],
+    align(left)[
+      #fakebold(text(
+        font: fonts.黑体,
+        size: 15pt,
+        "2026 年 5 月 12 日",
+      ))
     ]
   )
 }
