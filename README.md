@@ -1,10 +1,6 @@
-# 南京大学学位论文 modern-nju-thesis
+# 杭州电子科技大学学位论文 modern-hdu-thesis
 
-南京大学毕业论文（设计）的 Typst 模板，能够简洁、快速、持续生成 PDF 格式的毕业论文。[Typst Universe](https://typst.app/universe/package/modern-nju-thesis)
-
-Typst 非官方中文交流群：793548390
-
-南京大学 Typst 交流群：943622984
+本项目 fork 自 [OrangeX4](https://github.com/Orangex4) 开发的 [modern-nju-thesis](https://github.com/nju-lug/modern-nju-thesis)
 
 ![](imgs/editor.png)
 
