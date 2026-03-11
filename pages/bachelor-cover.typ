@@ -15,11 +15,11 @@
   info-inset: (x: 0pt, bottom: 1pt),
   info-key-width: 92pt,
   info-key-font: "宋体",
-  info-value-font: "楷体",
+  // info-value-font: "楷体",
   column-gutter: -3pt,
   row-gutter: 31.5pt,
   anonymous-info-keys: ("grade", "student-id", "author", "supervisor", "supervisor-ii"),
-  bold-info-keys: ("title",),
+  bold-info-keys: (),
   bold-level: "bold",
   datetime-display: datetime-display,
 ) = {
@@ -75,7 +75,8 @@
       inset: info-inset,
       stroke: (bottom: stoke-width + black),
       text(
-        font: fonts.at(info-value-font, default: "宋体"),
+        // font: fonts.at(info-value-font, default: "宋体"),
+        font: ("KaiTi", "KaiTi"),
         size: 字号.三号,
         weight: if key in bold-info-keys { bold-level } else { "regular" },
         bottom-edge: "descender",
