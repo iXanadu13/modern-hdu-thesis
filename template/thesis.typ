@@ -1,4 +1,5 @@
 #import "../lib.typ": documentclass
+#import "../utils/custom-cuti.typ": show-cn-fakebold, show-fakebold
 #import "../utils/style.typ": 字号, 字体
 
 // 你首先应该安装 https://github.com/nju-lug/modern-nju-thesis/tree/main/fonts/FangZheng 里的所有字体，
@@ -95,6 +96,15 @@
 
 // 正文
 #show: mainmatter
+
+// 修复中文bold
+// #show: show-cn-fakebold
+#show: (s, ..params) => show-fakebold(
+  reg-exp: "[\p{script=Han}！-･〇-〰—。]",
+  base-weight: "regular",
+  s,
+  ..params
+)
 
 // 符号表
 // #notation[
