@@ -62,7 +62,8 @@
         font: ("SimSun", "SimSun"), 
         "杭州电子科技大学本科毕业设计（论文）")
       )
-      #block(line(length: 100%, stroke: 0.5pt), above: 0.4em)
+      #block(line(length: 100%, stroke: 1pt), above: 0.4em)
+      #v(0.25cm)
     ]
   },
 )

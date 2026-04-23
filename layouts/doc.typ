@@ -5,7 +5,9 @@
   // 其他参数
   fallback: false,  // 字体缺失时使用 fallback，不显示豆腐块
   lang: "zh",
-  margin: (top: 3cm, bottom: 2cm, left: 3cm, right: 2cm),
+  // 页边距：上3cm，下2cm，左3cm，右2cm；装订线1cm（加到左边距）
+  // 上边距多加了1cm乃刻意为之，用于正确设置header的高度
+  margin: (top: 4cm, bottom: 2cm, left: 4cm, right: 2cm),
   it,
 ) = {
   // 1.  默认参数
