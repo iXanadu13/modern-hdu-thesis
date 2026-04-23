@@ -122,7 +122,7 @@
     v(52pt)
   } else {
     if info.title.len() > 1 {
-      v(20pt)
+      v(5pt)
     } else {
       v(61pt)
     }
@@ -146,7 +146,7 @@
   if anonymous {
     v(155pt)
   } else {
-    v(56pt)
+    v(46pt)
   }
 
   block(width: 350pt, grid(
