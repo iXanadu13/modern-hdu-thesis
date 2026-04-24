@@ -9,8 +9,8 @@
   twoside: false,
   fonts: (:),
   // 其他参数
-  leading: 1.5 * 15.6pt - 0.7em,
-  spacing: 1.5 * 15.6pt - 0.7em,
+  leading: 1.5 * 15.6pt - 0.7em, // 行间距
+  spacing: 1.5 * 15.6pt - 0.7em, // 段间距
   justify: true,
   first-line-indent: (amount: 2em, all: true),
   numbering: custom-numbering.with(first-level: "1  ", depth: 4, "1.1  "),
@@ -21,7 +21,7 @@
   heading-size: (16pt, 14pt, 12pt),
   heading-weight: ("regular",),
   heading-above: (2 * 15.6pt - 0.7em, 2 * 15.6pt - 0.7em),
-  heading-below: (2 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em),
+  heading-below: (3 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
   // 页眉
