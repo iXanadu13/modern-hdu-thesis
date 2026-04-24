@@ -9,8 +9,8 @@
   twoside: false,
   fonts: (:),
   // 其他参数
-  leading: 1.5 * 15.6pt - 0.7em, // 行间距
-  spacing: 1.5 * 15.6pt - 0.7em, // 段间距
+  leading: 20pt - 0.7em, // 行间距
+  spacing: 20pt - 0.7em, // 段间距
   justify: true,
   first-line-indent: (amount: 2em, all: true),
   numbering: custom-numbering.with(first-level: "1  ", depth: 4, "1.1  "),
@@ -20,8 +20,8 @@
   heading-font: auto,
   heading-size: (16pt, 14pt, 12pt),
   heading-weight: ("regular",),
-  heading-above: (2 * 15.6pt - 0.7em, 2 * 15.6pt - 0.7em),
-  heading-below: (3 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em),
+  heading-above: (2 * 16pt - 0.7em, 2 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em),
+  heading-below: (3 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em, 1.5 * 15.6pt - 0.7em),
   heading-pagebreak: (true, false),
   heading-align: (center, auto),
   // 页眉
@@ -119,7 +119,7 @@
         .map((pair) => (pair.at(0), array-at(pair.at(1), it.level))))
     )
     set block(
-      above: array-at(heading-above, it.level),
+      above: array-at(heading-above, it.level), // 这里最顶层标题前的above是无效的
       below: array-at(heading-below, it.level),
     )
     it
@@ -130,6 +130,7 @@
       // 如果打上了 no-auto-pagebreak 标签，则不自动换页
       if "label" not in it.fields() or str(it.label) != "no-auto-pagebreak" {
         pagebreak(weak: true)
+        v(heading-above.at(0))
       }
     }
     if array-at(heading-align, it.level) != auto {

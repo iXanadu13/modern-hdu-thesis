@@ -55,7 +55,7 @@
     #align(center)[
       #set text(size: 16pt, font: fonts.黑体)
 
-      #v(1em)
+      #v(0.75cm)
 
       // #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）中文摘要]]
       摘　　要

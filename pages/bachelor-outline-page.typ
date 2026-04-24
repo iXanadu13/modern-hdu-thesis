@@ -10,7 +10,7 @@
   depth: 4,
   title: "目　　录",
   outlined: false,
-  title-vspace: 9pt,
+  title-vspace: 9pt + 1em,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
   reference-font: auto,
@@ -49,7 +49,8 @@
 
   {
     set align(center)
-    v(1em)
+
+    v(0.75cm)
     text(..title-text-args, title)
     // 标记一个不可见的标题用于目录生成
     invisible-heading(level: 1, outlined: outlined, title)

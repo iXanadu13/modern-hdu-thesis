@@ -55,7 +55,7 @@
     #align(center)[
       #set text(size: 16pt, weight: "bold")
 
-      #v(1em)
+      #v(0.75cm)
 
       // #double-underline[#fakebold[南京大学本科生毕业论文（设计、作品）英文摘要]]
       #outline-title
