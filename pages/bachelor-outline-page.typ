@@ -10,7 +10,7 @@
   depth: 4,
   title: "目　　录",
   outlined: false,
-  title-vspace: 9pt + 1em,
+  title-vspace: 11pt + 1em,
   title-text-args: auto,
   // 引用页数的字体，这里用于显示 Times New Roman
   reference-font: auto,
@@ -19,8 +19,8 @@
   font: auto,
   size: (字号.小四, 字号.小四),
   // 垂直间距
-  above: (14pt, 14pt),
-  below: (14pt, 14pt),
+  above: (12pt, 11.6pt),
+  below: (0pt, 12pt),
   indent: (0pt, 1em, 2em),
   // 全都显示点号
   fill: (repeat([.], gap: 0.1em),),
